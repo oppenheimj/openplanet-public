@@ -1,0 +1,26 @@
+{
+  "name": "webgl-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "dotenv-webpack": "^7.0.2",
+    "express": "^4.17.1",
+    "express-winston": "^4.1.0",
+    "gl-matrix": "^3.3.0",
+    "nodemon": "^2.0.7",
+    "serve-favicon": "^2.5.0",
+    "winston": "^3.3.3",
+    "worker-plugin": "^5.0.1"
+  },
+  "devDependencies": {
+    "mathjs": "^9.4.0",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
+  }
+}

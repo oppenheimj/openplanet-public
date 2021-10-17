@@ -1,0 +1,26 @@
+version: "3"
+
+networks:
+  app:
+    driver: bridge
+
+services:
+    nginx:
+        build:
+            context: .
+            dockerfile: ./nginx/nginx.dev.Dockerfile
+
+    webpage:
+        build:
+            context: .
+            dockerfile: ./webpage/webpage.Dockerfile
+
+    skins:
+        build:
+            context: .
+            dockerfile: ./skins/skins.Dockerfile
+
+    websockets:
+        build:
+            context: .
+            dockerfile: ./websockets/websockets.Dockerfile

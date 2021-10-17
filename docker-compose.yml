@@ -1,0 +1,44 @@
+version: "3"
+
+networks:
+  app:
+    driver: bridge
+
+services:
+    nginx:
+        container_name: nginx
+        ports:
+            - "80:80"
+            - "443:443"
+            - "8090:8090"
+            - "8092:8092"
+        networks:
+            - app
+        depends_on: 
+            - webpage
+            - skins
+            - websockets
+        restart: always
+
+    webpage:
+        container_name: webpage
+        networks:
+            - app
+        ports:
+            - "8080:8080"
+        restart: always
+
+    skins:
+        container_name: skins
+        networks:
+            - app
+        ports:
+            - "8093:8093"
+        restart: always
+
+    websockets:
+        container_name: websockets
+        ports:
+            - "8091:8091"
+        networks:
+            - app
