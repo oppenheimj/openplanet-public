@@ -1,34 +1,23 @@
 # Openplanet
+**Openplanet is a containerized network-accessible procedurally generated 3D world.**
 ![cover](/docs/img/cover.png)
 
 ## Introduction
-The purpose of this project was to learn how to build a procedurally generated multiplayer 3D world. The result is a constallation of microservices tied together using docker-compose that together generate such a browser-based, network-accessible world. The project is currently deployed at https://www.openplanet.com but may also be run locally in development mode, as described below. This readme includes setup instructions, an overview of the architecture, and things to experiment with in the codebase.
+The purpose of this project was to learn how to build a multiplayer procedurally generated 3D world. The result is a constallation of microservices tied together using docker-compose that together generate such a browser-based, network-accessible world. The project is currently deployed at https://www.openplanet.com but may also be run locally in development mode, as described below. This readme includes setup instructions, an overview of the architecture, and things to experiment with in the codebase.
 
-## Setup
-TLDR, install Docker, clone the repo, and initialize a couple `.env` files.
-
-### Windows
-1. Install [Docker Desktop](https://docs.docker.com/desktop/windows/install/). There may be an error after the reboot. That is expected.
-2. Install [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps)
-3. Make sure [these](https://docs.docker.com/desktop/windows/troubleshoot/#virtualization) boxes are checked.
-4. Enable HyperV Virtualization in BIOS.
-
-### MacOS
-1. Install [Docker Desktop](https://docs.docker.com/desktop/mac/install/).
-
-### Linux
-You don't get any help with setup because you enjoy things being difficult.
-
-After OS-specific installation steps, you are ready to clone the project, initialize sample `.env` files, and finally build and run using docker-compose.
-
-1. Clone the code with `git clone git@github.com:oppenheimj/openplanet-public.git`
-2.  In `websockets/` and `webpage/` folders, copy the `.env_example` file and rename `.env`
-### Development environment
-```
-$ docker-compose build
-$ docker-compose up
-```
-and browse to http://localhost:8080.
+## Quick start
+1. Install [Docker Desktop](https://docs.docker.com/get-docker/).
+2. Clone the code.
+    ```
+    $ git clone git@github.com:oppenheimj/openplanet-public.git
+    ```
+3. In `websockets/` and `webpage/` folders, copy the `.env_example` file and rename `.env`.
+4. Build and launch using docker-compose.
+    ```
+    $ docker-compose build
+    $ docker-compose up
+    ```
+5. Browse to http://localhost:8080.
 
 ## Architecture
 Each of the four microservices are fully contained in the four top-level folders, `nginx/`, `skins/`, `webpage/`, and `websockets/`. What follows is a brief description of each microservice and then a description of overall code flow.
